@@ -7,10 +7,10 @@ Da der Server in Swift geschrieben ist, muss dieses entweder installiert sein (S
 
 
 ## Direkt mit Swift starten
-Sind Swift und Dependencies (openssl, libssl-dev, clang, libicu-dev, libcurl4-openssl-dev) installiert, so kann der Server mit dem folgenden Befehlen compilliert und gestartet werden:
+Sind Swift und Dependencies (openssl, libssl-dev, clang, libicu-dev, libcurl4-openssl-dev) installiert, so kann der Server mit den folgenden Befehlen compilliert und gestartet werden:
 ```shell
-    swift build -c release
-    .build/release/InformatiCUP
+    $ swift build -c release
+    $ .build/release/InformatiCUP
 ```
 
 Standardmäßig wird der Server im Predict-Modus gestartet. Das heißt, es kann manuell der Client gestartet werden. Weitere Modi sind "stats" für eine Selbstevaluation des Servers und "train", damit die Neuralen Netzwerke weiter trainiert werden. Achtung: Dabei werden die bestehenden neuralen Netzwerke nach jeder Generation überschrieben. Für die Evaluation bitte die beigefügten Netzwerke verwenden.
@@ -23,25 +23,25 @@ Für weitere Optionen siehe die Hilfe mit `--help`. Diese Hilfe ist auch am Ende
 ## Docker
 Ist Docker installiert und gestartet, so kann mit den folgenden Befehle ein Docker-Image erstellt und gestartet werden:
 ```shell
-    docker build -t ic20 .
-    docker run --name ic20 ic20
+    $ docker build -t ic20 .
+    $ docker run --name ic20 ic20
 ```
 
 Zum Beenden und Entfernen des Containers können die folgenden Befehele verwendet werden:
 ```shell
-    docker stop ic20
-    docker rm ic20
+    $ docker stop ic20
+    $ docker rm ic20
 ```
 
 Standardmäßig wird der Server im Predict-Modus gestartet. Das heißt, es kann manuell der Client gestartet werden. Weitere Modi sind "stats" für eine Selbstevaluation des Servers und "train", damit die Neuralen Netzwerke weiter trainiert werden. Bei Verwendung von Docker kann dazu der `run`-Befehl wie folgt abgeändert werden:
 ```shell
-    docker run --name ic20 ic20 .build/release/InformatiCUP [args] 
+    $ docker run --name ic20 ic20 .build/release/InformatiCUP [args] 
 ```
 Wenn die Modi "stats" oder "train" verwendet werden, muss mit `-c /app/binaries/ic20_linux` die Linux Version des Clients angegeben werden!
 
 Für die Hilfe kann dementsprechend der folgende Befehl genutzt werden. Die Hilfe ist aber auch zusätzlich am Ende dieses Dokumentes beigefügt.
 ```shell
-    docker run ic20 .build/release/InformatiCUP --help
+    $ docker run ic20 .build/release/InformatiCUP --help
 ```
 
 Da innerhalb von Docker die Threadpriorisierung scheinbar nicht zuverlässig läuft, wird die Statusanzeige nur unregelmäßig aktualisiert.
