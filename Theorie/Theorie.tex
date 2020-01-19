@@ -5,6 +5,9 @@
 \usepackage{hyperref}
 
 
+\usepackage[style=ieee,backend=biber]{biblatex}
+\addbibresource{biblio.bib}
+\bibliography{biblio}
 
 \title{Lösungsansatz für den InformatiCup 2020}
 \author{Jonas Peeters\\Nordakademie}
@@ -12,6 +15,8 @@
 \begin{document}
 \maketitle
 \tableofcontents
+
+
 
 \section{Beschreibung der Aufgabe}
 In dieser Sektion soll die diesjährige Aufgabe des InformatiCup kurz beschrieben werden.
@@ -25,6 +30,8 @@ Die genauen Aktionen, die ein Spielen ausführen kann, sowie alle Spielregeln si
 
 \section{Neurale Netzwerke}
 Zur Lösung der Aufgabe sollen künstliche Intelligenzen in Form von neuralen Netzwerken verwendet werden. Die genaue Umsetzung dieser ist in der Sektion Lösungsansätze beschrieben. In dieser Sektion wird die Funktionsweise von neuralen Netzwerken beschrieben. Dabei wird zwar die Funktionsweise von neuralen Netzwerken im Allgemeinen, jedoch mit starkem Focus auf die, in den Lösungsansätzen verwendeten, Konzepte, behandelt.
+
+Für vertiefende Ansätze zu neuralen Netzwerken kann die Quelle \cite{Sarle94neuralnetworks} verwendet werden, das folgende Kapitel basiert aber nicht auf dieser, sondern primär auf der Grundlage des Informatik Schulunterrichts bei Herrn Helmut Kraut. \cite{kraut} Aus diesem Grund werden keine Einzelverweise angegeben.
 
 Neurale Netzwerke sollen im Grunde die Funktionsweise des menschlichen Gehirns modellieren, nehmen dabei aber einige Einschränkungen und Abwandlungen vor. Den Grundbaustein bilden dabei Neuronen.
 
@@ -178,6 +185,8 @@ Es gibt verschiedene Ansätze den Server zu verbessern, welche allerdings aus Ze
 
 Einen größeren Schub würde aber vermutlich eine veränderte der Logik für Ein- und Ausgabe der Netzwerke schaffen. Das aktuelle System ist relativ restriktiv, was die Freiheiten der KI betrifft, um die Trainingszeiten zu verkürzen. Mit einem offeneren System könnte dies aber besser funktionieren.
 
+
+\printbibliography
 
 \end{document}
 
